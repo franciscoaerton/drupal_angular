@@ -99,6 +99,9 @@
 	</br></br>
 	<table width='250px' border='1' cellPadding='1' cellSpacing='1'>
 <tr>
+	<td>
+		NID ORÇAMENTO
+	</td>
 <td valign='bottom' align='center'><b>ANO</td>
 <td align='right'><b>TOTAL</td>
 </tr>
@@ -112,7 +115,9 @@
 
 <td align='right'><b>{{t.jan + t.fev + t.mar + t.abr + t.mai + t.jun + t.jul + t.ago + t.set + t.out + t.nov + t.dez | realMoneyFormat}}</td>
 <td>
-	
+	<span> MINUTA X </span>
+	<span> UPLOAD </span>
+	<span> DELETE </span>
 </td>
 	</tr>
 	</table>
