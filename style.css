@@ -1,0 +1,56 @@
+/**
+ * Place your custom styles here.
+ */
+.clearInput {
+	width:80px !important;
+    border: none;
+	outline: none;
+	text-align: center;
+}
+.tableWid {
+	width:80px !important;
+}
+.tableHead{
+	text-align: center;
+}
+.cellTable{
+	text-align: center;
+}
+
+
+.clearInput:focus {
+    border: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+	-moz-appearance: textfield;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/**
+ * Place your custom styles here.
+ */
+ @media print {
+      a[href]:after {
+        content: "" !important;
+      }
+	  .navbar-bar, .navbar-lining , .region-sidebar-first, aside{
+		  display: none;
+	  }
+	  .messages {
+		  display: none;
+	  }
+	  section {
+		  width: 100%!important;
+
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+    }

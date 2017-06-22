@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function sig_angular_core_menu() {
+  $items = array();
+
+  $items['orc/distribuicao/%'] = array(
+    'title' => t('Nodes'),
+    'page callback' => 'distribuicao',
+    'access arguments' => array('access content'),
+  );
+	
+  $items['teste_angular'] = array(
+    'title' => t('Teste'),
+    'page callback' => 'teste_angularjs',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+	 
+  return $items;
+}
+
+
+/**
+ * Page callback.
+ */
+ 
+
+function distribuicao() {
+	$nidOrc = arg(2);
+	//kpr($nidOrc);
+	drupal_set_message(">  >$nidOrc");
+	angularjs_init_application('distribuicao');
+	drupal_add_js(drupal_get_path('module', 'sig_angular_core') . '/js/distribuicao.js');
+
+	return theme('angularjs_distribuicao');
+}
+
+function teste_angularjs() {
+	angularjs_init_application('teste_angularjs');
+	drupal_add_js(drupal_get_path('module', 'sig_angular_core') . '/js/teste.js');
+
+	return theme('teste_angularjs');
+}
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function sig_angular_core_theme() {
+	$themes = array();
+
+	$themes['angularjs_distribuicao'] = array(
+		'template' => 'theme/distribuicao',
+		'parameters' => array(),
+	);
+	$themes['teste_angularjs'] = array(
+		'template' => 'theme/teste',
+		'parameters' => array(),
+	);
+
+	return $themes;
+}
+
