@@ -111,7 +111,10 @@
 		<td align='center' >&nbsp;</td>
 
 <td align='right'><b>{{t.jan + t.fev + t.mar + t.abr + t.mai + t.jun + t.jul + t.ago + t.set + t.out + t.nov + t.dez | realMoneyFormat}}</td>
-</tr>
+<td>
+	
+</td>
+	</tr>
 	</table>
 	
 	
