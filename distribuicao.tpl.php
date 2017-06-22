@@ -22,7 +22,7 @@
 </br>
 </br>
 </br>
-	<table width="100%" border='1' cellPadding='1' cellSpacing='1'>
+	<table class="displayNone" width="100%" border='1' cellPadding='1' cellSpacing='1'>
 <tr>
 <th class="tableWid tableHead"><b>ANO</th>
 <th class="tableHead">JAN</th>
