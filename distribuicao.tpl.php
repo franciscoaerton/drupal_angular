@@ -72,7 +72,7 @@
 	<th class="tableHead"><b>DEZ</th>
 	<th class="tableHead"><b>TOTAL</th>
 </tr>
-<tr ng-repeat="t in orcArray">
+<tr ng-repeat="t in orcArray ">
 	<td valign='bottom' align='center' class="cellTable"><b>{{t.ano}}</td>
 	<td align='center' class="cellTable">{{t.jan | realMoneyFormat }}</td>
 	<td align='center' class="cellTable">{{t.fev | realMoneyFormat }}</td> 
@@ -103,7 +103,7 @@
 	<td align='right' class="tableWid-dois tableHead" ><b>TOTAL</td>
 	<td align='right' class="tableWid-dois tableHead" ><b>OPERAÇÕES</td>
 </tr>
-<tr ng-repeat="t in orcArray">
+<tr ng-repeat="t in orcArray | orderBy:'ano'">
 	<td align='center' class="cellTable" ><b>{{t.ano}}</td>
 	<td align='right' class="cellTable"><b>{{t.total | realMoneyFormat}}</td>
 	<td align='center' class="cellTable"><button type="button" class="btn btn-success btn-xs">+</button></td>
