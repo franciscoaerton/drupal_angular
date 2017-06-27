@@ -1,0 +1,33 @@
+<?php
+		/*
+		$response = array();
+		$response[2017] = array($type,1,2,3,4,5,6,7,8,9,10,11);
+		$response[2018] = array($arg,11,12,13,14,15,16,17,18,19,110,111);
+		
+		return  drupal_json_output($response);
+		*/
+		
+		$query = new EntityFieldQuery();
+		$query->entityCondition('entity_type', 'node')
+		->entityCondition('bundle', 'distribuicao_orcamento')
+		// See the comment about != NULL above.
+		->fieldCondition('field_nid_disorc', 'value', '5994', '=')
+		// Run the query as user 1.
+		->addMetaData('account', user_load(1));
+		
+		$result = $query->execute();	
+		
+		if (isset($result['node'])) {
+		  $items_nids = array_keys($result['node']);
+		  $items = entity_load('node', $items_nids);
+		} 
+		
+		
+		
+		
+
+						
+		//print_r ($items);
+		var_dump( $items);
+		
+		//return  drupal_json_output($items);
