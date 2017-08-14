@@ -22,11 +22,8 @@ echo "Confirma as informacoes - 1 'sim', outro valor 'nao': "
 read is_confirmed
 
 if [ "$is_confirmed" == 1 ]; then
-	sudo mkdir /var/www/html/$nome_da_pasta;
-	sudo mkdir /var/www/html/$nome_da_pasta/public_html;
-	sudo mkdir /var/www/html/$nome_da_pasta/log;
-	sudo mkdir /var/www/html/$nome_da_pasta/backups;
-	sudo wget -c -P /var/www/html/$nome_da_pasta/public_html https://ftp.drupal.org/files/projects/panopoly-7.x-1.44-core.tar.gz;
+	sudo cd 
+	sudo wget -c -P $local_da_pasta/web $path_distribuicao;
 	sudo tar -C /var/www/html/$nome_da_pasta/public_html -xvzf /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44-core.tar.gz;
 	sudo rm /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44-core.tar.gz;
 	sudo rm -rf ./panopoly-7.x-1.44;
