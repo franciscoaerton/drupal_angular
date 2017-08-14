@@ -27,7 +27,7 @@ if [ "$is_confirmed" == 1 ]; then
 	sudo mv $local_da_pasta/web/distro/* $local_da_pasta/web;
 	sudo mv $local_da_pasta/web/distro/.htaccess $local_da_pasta/web;
 		
-	sudo chown www-data:www-data -c -R /var/www/html/$nome_da_pasta/public_html/sites;
+	#sudo chown www-data:www-data -c -R /var/www/html/$nome_da_pasta/public_html/sites;
 	
 	
 
