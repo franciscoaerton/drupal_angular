@@ -1,17 +1,20 @@
 #! /bin/bash
 # My First Script
 
-echo "Informar o nome da nova pasta: " 
-read nome_da_pasta;
+echo "Informar o caminho: " 
+read local_da_pasta;
 
-echo "Informar o nome do site: " 
-read nome_do_site;
+echo "Informar path do arquivo drupal da distribuição: " 
+read path_distribuicao;
 
 echo " 
 ====================================
 Dados para criacao: 
-Pasta a ser criada: '$nome_da_pasta'
-Nome do site: '$nome_do_site'
+Local da Pasta: '$local_da_pasta'
+Nome do site: '$path_distribuicao'
+
+
+
 ====================================
 ";
 
