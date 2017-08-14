@@ -22,9 +22,11 @@ echo "Confirma as informacoes - 1 'sim', outro valor 'nao': "
 read is_confirmed
 
 if [ "$is_confirmed" == 1 ]; then
-	sudo cd 
-	sudo wget -c -P $local_da_pasta/web $path_distribuicao;
+	sudo wget -c $path_distribuicao o- $local_da_pasta/web/distro.tar.gz;
+	sudo tar -c $local_da_pasta/web -xvzf $local_da_pasta/web/distro.tar.gz;
 	sudo tar -C /var/www/html/$nome_da_pasta/public_html -xvzf /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44-core.tar.gz;
+	sudo wget $local_da_pasta/web $path_distribuicao -O ~/Downloads/UbuntuSaucySalamander.torrent
+	
 	sudo rm /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44-core.tar.gz;
 	sudo rm -rf ./panopoly-7.x-1.44;
 	sudo mv /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44/* /var/www/html/$nome_da_pasta/public_html/;
