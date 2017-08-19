@@ -1,0 +1,13 @@
+# activate a trusted theme
+UPDATE system SET status=1 WHERE name = 'garland';
+# change the default setting
+UPDATE variable SET value='s:7:"garland"' WHERE name = 'theme_default';
+
+# clear the cache tables
+TRUNCATE cache;
+TRUNCATE cache_bootstrap;
+TRUNCATE cache_block;
+
+If you are using per-user themes, and you've just messed it up for yourself as admin, try
+
+UPDATE users SET theme='garland' WHERE uid = '1';
