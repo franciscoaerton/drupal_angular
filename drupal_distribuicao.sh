@@ -45,6 +45,6 @@ fi
 
 # mudar leitura
 
-#
+# cd chmod -R 755 /var/www/html/sistema/public_html/sites
 
 
