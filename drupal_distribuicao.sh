@@ -42,3 +42,9 @@ if [ "$is_confirmed" == 1 ]; then
 else
 	echo "Nao houve movimentação de arquivos!";
 fi
+
+# mudar leitura
+
+#
+
+
