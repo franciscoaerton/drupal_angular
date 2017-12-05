@@ -1,5 +1,5 @@
-#! /bin/bash
-# My First Script
+###### arquivo bash #############
+#!/bin/bash
 
 echo "Informar o nome da nova pasta: " 
 read nome_da_pasta;
