@@ -7,8 +7,7 @@ $parameters = array(
   'sys_groupid' => 0
 );
 $result_isp = ispconfig_api('client_get_sites_by_user', $parameters);
-//kpr ($result);
-//kpr ($session_id);
+
 $end = ispconfig_api_logout($session_id);
 
  // Endpoint Drupal.
@@ -23,19 +22,9 @@ $result_drupal = curl_exec($ch);
 curl_close($ch); 
 
 $obj = json_decode($result_drupal);
-//print_r( $obj); // 12345
-//kpr($obj);
 
-foreach ($result_isp as $key => $value) {
-//print_r($value);
-  echo '<tr>
-          <td>ordem'.$key.'</td>
-          <td>'.$value['domain_id']'</td>
-          <td>'.$value['domain'].'</td>
-          <td>'.$value['document_root'].'</td>
-          <td>link</td>
-        </tr>';
-}
 
+//comparar os arquivos e filtrar sites desatualizados
+kpr ($result_isp);
+kpr($obj);
 ?>
- 
