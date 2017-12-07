@@ -38,7 +38,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $url);
    // Set authentication details.
-curl_setopt($ch, CURLOPT_USERPWD, "admin_webmaster:pW_webmaster@02157781");
+curl_setopt($ch, CURLOPT_USERPWD, "login:senha");
    // Fetch the results.
 $result = curl_exec($ch);
 curl_close($ch); 
