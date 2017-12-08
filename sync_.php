@@ -48,7 +48,7 @@ $array_novos = array();
 foreach ($array_server as $key => $value) {
 	//busca novos sites
    	if (array_key_exists($key, $array_drupal)) {
-   		 $array_novos[$key] = $value;
+   		 $array_novos[$key]['domain'] => $value['domain'];
 }
 
 
