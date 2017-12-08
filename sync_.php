@@ -44,6 +44,15 @@ $array_drupal[$value->domain_id]['active'] = $value->ativo ;
 
 }
 
+$array_novos = array();
+foreach ($array_server as $key => $value) {
+	//busca novos sites
+   	if (array_key_exists($key, $array_drupal)) {
+   		 $array_novos[$key] = $value;
+}
+
+
 kpr($array_server);
 kpr($array_drupal);
+kpr ($array_novos);
 ?>
