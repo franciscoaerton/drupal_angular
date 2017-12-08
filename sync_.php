@@ -16,15 +16,34 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $url);
    // Set authentication details.
-curl_setopt($ch, CURLOPT_USERPWD, "login:senha");
+curl_setopt($ch, CURLOPT_USERPWD, "admin_webmaster:pW_webmaster@02157781");
    // Fetch the results.
 $result_drupal = curl_exec($ch);
 curl_close($ch); 
 
 $obj = json_decode($result_drupal);
 
+$array_server = array();
+$array_drupal = array();
 
 //comparar os arquivos e filtrar sites desatualizados
-kpr ($result_isp);
-kpr($obj);
+//kpr ($result_isp);
+//kpr($obj);
+
+foreach($result_isp as $key => $value) {
+$array_server[$value['domain_id']]['domain'] = $value['domain'] ;
+$array_server[$value['domain_id']]['document_root'] = $value['document_root'] ;
+$array_server[$value['domain_id']]['active'] = $value['active'] ;
+
+}
+
+foreach($obj as $key => $value) {
+$array_drupal[$value->domain_id]['domain'] = $value->domain ;
+$array_drupal[$value->domain_id]['document_root'] = $value->document_root ;
+$array_drupal[$value->domain_id]['active'] = $value->ativo ;
+
+}
+
+kpr($array_server);
+kpr($array_drupal);
 ?>
