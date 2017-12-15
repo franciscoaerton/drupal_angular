@@ -26,6 +26,27 @@ $array_server = array();
 $array_drupal = array();
 $array_news = array();
 
+foreach($result_isp as $key => $value) {
+$array_server[$value['database_id']]['parent_domain_id'] = $value['parent_domain_id'];
+$array_server[$value['database_id']]['database_name'] = $value['database_name'] ;
+$array_server[$value['database_id']]['database_user_id'] = $value['database_user_id'] ;
+}
+foreach($obj as $key => $value) {
+$array_drupal[$value->database_id]['parent_domain_id'] = $value->parent_domain_id ;
+$array_drupal[$value->database_id]['database_name'] = $value->database_name ;
+$array_drupal[$value->database_id]['database_user_id'] = $value->database_user_id ;
+}
+// separa os novos itens da tabela
+foreach ($array_server as $key => $value) {
+	//echo $key;
+	//kpr ($value);
+   	if (!array_key_exists($key, $array_drupal)) {
+   		$array_news[$key]['parent_domain_id'] = $value['parent_domain_id'];
+		  $array_news[$key]['database_name'] = $value['database_name'];
+		  $array_news[$key]['database_user_id'] = $value['database_user_id'];
+	}
+}
+
 if (count($obj) == 0)
   {
     echo 'No DBs in drupal';
@@ -35,6 +56,8 @@ if (count($obj) == 0)
   }
 
 //comparar os arquivos e filtrar sites desatualizados
-kpr ($result_isp);
-kpr($obj);
+kpr ($array_server);
+kpr ($array_drupal);
+kpr ($array_news);
+//kpr($obj);
  ?>
