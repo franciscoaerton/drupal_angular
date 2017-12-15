@@ -47,12 +47,10 @@ foreach ($array_server as $key => $value) {
 	}
 }
 
-if (count($obj) == 0)
-  {
-    echo 'No DBs in drupal';
-
+if (count($obj) == 0)  {
+    //echo 'No DBs in drupal';
   }else{
-    echo 'DBs'; 
+    //echo 'DBs'; 
   }
 
 //comparar os arquivos e filtrar sites desatualizados
@@ -60,4 +58,29 @@ kpr ($array_server);
 kpr ($array_drupal);
 kpr ($array_news);
 //kpr($obj);
+
+//-------------------------------------------------------------------------------create nodes-----------------------------------
+
+global $user;
+if (count($array_news) > 0){
+
+	foreach ($array_news as $key => $value) {
+		// Create an Entity.
+		$node = entity_create('node', array('type' => 'banco_de_dados'));
+		// Specify the author.
+		$node->uid = $user->uid;
+		// Create a Entity Wrapper of that new Entity.
+		$emw_node = entity_metadata_wrapper('node', $node);
+		// Set a title and some text field value.
+		$emw_node->title = 'db'.$key;
+		$emw_node->field_database_id= $key;
+		$emw_node->field_parent_domain_id= $value['parent_domain_id'];
+		$emw_node->field_database_name= $value['database_name'];
+		$emw_node->field_database_user_id= $value['database_user_id'];
+
+		// And save it.
+		$emw_node->save();
+	}
+}
+
  ?>
