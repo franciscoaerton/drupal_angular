@@ -1,6 +1,6 @@
 <?php
 
-$_biblioteca_sh = ; //arquivo para ser executado
+$_biblioteca_sh = ; //sites/default/files/private arquivo para ser executado
 $_diretorio_web = ; //diretorio raiz da instalação
 $_application_ftp = ; //endereço ftp da applicação -- poder ser local em drupal
 $_tar_folder = ; // nome da pasta criada que será expluida apos a instalação
