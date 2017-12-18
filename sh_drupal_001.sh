@@ -5,7 +5,14 @@ HomeDir=$1;
 AplicationFtp=$2;
 TarFolderName=$3;
 
+# limpeza geral das subpastas
+sudo rm -rf HomeDir/web/*;
+
+# fazemos o download para a pasta raiz 
 sudo wget -c -P /var/www/html/$nome_da_pasta/public_html https://ftp.drupal.org/files/projects/panopoly-7.x-1.44-core.tar.gz;
+
+sudo wget -c -P AplicationFtp -O HomeDir/
+
 sudo wget -c -P /var/www/html/$nome_da_pasta/public_html https://ftp.drupal.org/files/projects/panopoly-7.x-1.44-core.tar.gz;
 sudo tar -C /var/www/html/$nome_da_pasta/public_html -xvzf /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44-core.tar.gz;
 sudo rm /var/www/html/$nome_da_pasta/public_html/panopoly-7.x-1.44-core.tar.gz;
